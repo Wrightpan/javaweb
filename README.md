@@ -15,4 +15,7 @@
 * 了解掌握了servlet的配置（tomcat）及生命周期方法。
 * 了解掌握其POST请求和servletrequest及servletresponse。
 
-
+### 第三周完成内容
+* 了解掌握servlet中关于httpservlet的相关知识。
+* 完成servlet小结及练习，与数据库进行简单的交互。
+* 学习JSP概述，页面的隐含对象，语法等基础知识。
