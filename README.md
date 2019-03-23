@@ -13,7 +13,7 @@
 ### 第二周完成内容
 * 使用eclipse开发一个javaweb项目并新建一个servlet程序。
 * 了解掌握了servlet的配置（tomcat）及生命周期方法。
-* 了解掌握其POST请求和servletrequest及servletresponse。
+* 了解掌握其POST请求和servletrequest及servletresponse的方法。
 
 ### 第三周完成内容
 * 了解掌握servlet中关于httpservlet的相关知识。
