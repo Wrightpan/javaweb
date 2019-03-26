@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.servlet.ServletResponse;
+
 /**
  * Servlet implementation class loginservletone
  */
@@ -49,22 +49,22 @@ public class loginservletone extends HttpServlet {
 				
 				Connection connection = null;
 				PreparedStatement statement = null;
-				ResultSet resultset ;
+				ResultSet resultset = null  ;
 				
 				
 				PrintWriter out = resp.getWriter();
 				
 				try {
-					Class.forName("com.mysql.jdbc.Driver");
-					String url = "jdbc.mysql:///test";
-					String user = "root";
-					String password2 = "030909";
-					connection = (Connection) DriverManager.getConnection(url,user,password2);
+					//Class.forName("com.mysql.jdbc.Driver");
+					//String url = "jdbc.mysql:///test";
+					//String user = "root";
+					//String password2 = "030909";
+					connection = (Connection) DriverManager.getConnection("jdbc.mysql:///test","root","030909");
 					
 					String sql = "select count(id) from users where username = ?" +
 							"password = ?";
 					
-					statement = connection.prepareStatement(sql);
+					statement = ((java.sql.Connection) connection).prepareStatement(sql);
 					statement.setString(1, username);
 					statement.setString(2, password);
 					
@@ -97,12 +97,8 @@ public class loginservletone extends HttpServlet {
 					}catch(SQLException e) {
 						e.printStackTrace();
 					}
-					try {
-						if(connection != null) {
-							connection.close();
-						}
-					}catch(SQLException e) {
-						e.printStackTrace();
+					if(connection != null) {
+						connection.close();
 					}
 					
 				}

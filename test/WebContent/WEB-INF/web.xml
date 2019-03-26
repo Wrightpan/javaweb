@@ -8,12 +8,29 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+     <context-param>
+  	<param-name>user</param-name>
+  	<param-value>005</param-value>
+  </context-param>
+    <context-param>
+  	<param-name>password</param-name>
+  	<param-value>123456</param-value>
+  </context-param>
   <servlet>
+    <servlet-name>Logintwo</servlet-name>
+    <servlet-class>test1.Logintwo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logintwo</servlet-name>
+    <url-pattern>/Logintwo</url-pattern>
+  </servlet-mapping>  
+   <!-- <servlet>
     <servlet-name>loginservletone</servlet-name>
     <servlet-class>test1.loginservletone</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>loginservletone</servlet-name>
     <url-pattern>/loginservletone</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>    -->
+  
 </web-app>
