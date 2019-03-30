@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletResponse;
@@ -26,7 +26,7 @@ public class loginservlet extends HttpServlet {
 				
 				Connection connection = null;
 				PreparedStatement statement = null;
-				ResultSet resultset ;
+				ResultSet resultset = null;
 				
 				
 				PrintWriter out = resp.getWriter();
@@ -41,11 +41,11 @@ public class loginservlet extends HttpServlet {
 					String sql = "select count(id) from users where username = ?" +
 							"password = ?";
 					
-					statement = connection.prepareStatement(sql);
+					//statement = connection.p(sql);
+					//statement = connection.statement(sql);
 					statement.setString(1, username);
 					statement.setString(2, password);
-					
-					resultset = statement.executeQuery();
+
 					
 					if(resultset.next())
 					{
@@ -78,7 +78,7 @@ public class loginservlet extends HttpServlet {
 						if(connection != null) {
 							connection.close();
 						}
-					}catch(SQLException e) {
+					}catch( Exception e) {
 						e.printStackTrace();
 					}
 					
