@@ -19,22 +19,22 @@
   </script>
   </head>
   <body>
-  <form action="query.do"  method="post">
+  <form action="query.do", method="post ">
     <table>
       <tr>
         <td>userame:</td>
-        <td><input type="text"  name="username"/></td>
+        <td><input type="text", name="username"/></td>
       </tr>
  
       <tr>
         <td>password:</td>
-        <td><input type="text"  name="password"/></td>
+        <td><input type="text", name="password"/></td>
       </tr>
  
     
  
       <tr>
-        <td><input type="submit"  value="Query"/></td>
+        <td><input type="submit", value="Query"/></td>
         <td><a href="">Create New Users</a></td>
  
       </tr>

@@ -11,7 +11,7 @@ public class UsersDAOImpl extends DAO<Users> implements UsersDAO {
     @Override
     public void save(Users Users) {
         String sql = "INSERT INTO Users(username, password, ) VALUES(?, ?, ?)";
-        update(sql, Users.getusername(), Users.getPassword(), );
+        update(sql, Users.getUsername(), Users.getPassword());
     }
  
     @Override
@@ -39,7 +39,7 @@ public List<Users> getForListWithCriteriaUsers(CriteriaUsers cc) {
             "username LIKE ? AND password LIKE ?";
     //修改了CriteriaUsers的getter()方法，使其返回字符串中有%%（模糊查询）
     //若返回值为null，则返回“%%”， 否则返回"%" + value + "%"
-    return getForList(sql, cc.getName(), cc.getpassword());
+    return getForList(sql, cc.getUsername(), cc.getPassword());
 }
 
 

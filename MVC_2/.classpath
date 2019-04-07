@@ -13,5 +13,12 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/root/Downloads/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="lib" path="/root/Downloads/commons-dbutils-1.7/commons-dbutils-1.7.jar"/>
+	<classpathentry kind="lib" path="/root/Downloads/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbutils-1.7.jar"/>
+	<classpathentry kind="lib" path="/opt/apach-tomcat-9.0.16/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

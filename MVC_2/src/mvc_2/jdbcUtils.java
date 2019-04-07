@@ -23,7 +23,7 @@ public class jdbcUtils {
  
     static {
         //数据源只能被创建一次
-        dataSource = new ComboPooledDataSource("mvcapp");
+        dataSource = new ComboPooledDataSource("mvc");
     }
  
     public static Connection getConnection() throws SQLException{
