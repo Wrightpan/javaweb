@@ -5,6 +5,7 @@
 * 学号:222016321072005
 * 网址: 1. [javaweb-servlet](http://120.79.68.168:8081/test/login.html)
         2. [javaweb-MVC](http://120.79.68.168:8081/MVC_1/test.jsp)
+        3. [javaweb-MVC2](http://120.79.68.168:8081/_2/index.jsp)
 
 ### 第一周完成内容
 * 完成开发的相关环境的安装及配置。
