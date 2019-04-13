@@ -1,0 +1,189 @@
+
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style >
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        .cancelbtn1 {
+            width: auto;
+            padding: 14px 20px;
+            background-color: #3e8e41;
+            float: right;
+        }
+
+        /* Center the image and position the close button */
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 55%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+
+        /* Add Zoom Animation */
+       /* .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }*/
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)}
+            to {-webkit-transform: scale(1)}
+        }
+
+        @keyframes animatezoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div >
+
+    <form class="modal-content animate" action="Logintwo" method="post">
+
+
+        <div class="container">
+            <label><b>用户名</b></label>
+            <input type="text" placeholder="请输入用户名" name="username" required>
+
+            <label><b>密码</b></label>
+            <input type="password" placeholder="请输入密码" name="password" required>
+
+            <button type="submit">登录</button>
+            <input type="checkbox" checked="checked"> 记住我
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button"  class="cancelbtn">关闭</button>
+
+            <button onclick="document.getElementById('id01').style.display='block'" class="cancelbtn1">注册</button>
+            <span class="psw"><a href="#">忘记密码？</a></span>
+        </div>
+    </form>
+</div>
+
+<div id="id01" class="modal">
+   <!--  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>-->
+    <form class="modal-content animate" action="/action_page.php">
+        <div class="container">
+            <label><b>用户名</b></label>
+            <input type="text" placeholder="请输入用户民" name="email" required>
+
+            <label><b>密码</b></label>
+            <input type="password" placeholder="请输入密码" name="psw" required>
+
+            <label><b>确认密码</b></label>
+            <input type="password" placeholder="请重新输入密码" name="psw-repeat" required>
+            <input type="checkbox" checked="checked"> 记住我
+            <p>创建帐户即表示您同意我们的<a href="#">条款/隐私权</a></p>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">关闭</button>
+                <button type="submit" class="cancelbtn1">注册</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+</body>
+<script>
+    // 获取模型
+    var modal = document.getElementById('id01');
+
+    // 鼠标点击模型外区域关闭登录框
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</html>
