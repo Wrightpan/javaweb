@@ -3,7 +3,7 @@
 
 ### 基本信息
 * 学号:222016321072005
-* 网址: 1. [javaweb-servlet](http://120.79.68.168:8081/test/index.html)
+* 网址: 1. [javaweb-servlet](http://120.79.68.168:8081/food/index.html)
         2. [javaweb-MVC](http://120.79.68.168:8081/MVC_3/index.jsp)
         
 
