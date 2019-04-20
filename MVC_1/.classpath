@@ -12,5 +12,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/opt/apach-tomcat-9.0.16/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/root/Downloads/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="/root/Downloads/commons-dbutils-1.7/commons-dbutils-1.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
