@@ -3,8 +3,8 @@
 
 ### 基本信息
 * 学号:222016321072005
-* 网址: 1. [javaweb-servlet](http://120.79.68.168:8081/food/index.html)
-        2. [javaweb-MVC](http://120.79.68.168:8081/MVC_1/index.jsp)
+* 网址: 1. [javaweb](http://120.79.68.168:8081/cookie/login.jsp)
+        2. [javaweb](http://120.79.68.168:8081/cookie/books.jsp)
         
 
 ### 第一周完成内容
