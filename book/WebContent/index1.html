@@ -38,19 +38,22 @@
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">Welcome!</h1>
             <p class="mb-5">      </p>
-              <form action="./login" method="post">
-              <div class="input-group input-group-newsletter">
+              <form action="./checkcodeservlet" method="post">
+              <div class="input-group-append">
               <input type="text" name="username" class="form-control" placeholder="Enter username(005)..."aria-label="Enter username..." aria-describedby="basic-addon">
               </div> 
               <br> 
-            <div class="input-group input-group-newsletter">
+            <div class="input-group-append">
               
               <input type="password" name="password" class="form-control" placeholder="Enter password(123456)..." aria-label="Enter password..." aria-describedby="basic-addon">
               
             </div><br>
             <div class="input-group-append">
-                <button class="btn btn-secondary" type="submit">Notify Me!</button>
-              </div>
+            	 <input type="text" name="check_code" class="form-control" placeholder="Enter verification code..."aria-label="Enter verification code..." aria-describedby="basic-addon"/>
+    			<img src="./validatecolorservlet"/>
+              </div><br>
+           <button class="btn btn-secondary" type="submit">Login!</button>
+             
               </form>
           </div>
         </div>

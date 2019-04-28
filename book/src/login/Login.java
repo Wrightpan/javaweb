@@ -44,6 +44,9 @@ public class Login extends HttpServlet {
 	    public void service
 	            (ServletRequest request, ServletResponse response)
 	        throws ServerException ,IOException, ServletException{
+	    	
+	    	
+	    	
 	        String username =request.getParameter("username");
 	        String password =request.getParameter("password");
 

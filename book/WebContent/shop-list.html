@@ -24,6 +24,7 @@
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
+ 
 	<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
@@ -812,8 +813,13 @@
 	        						<li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
 	        					</ul>
 	        				</div>
+	        				
+	        	<!-- jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj -->			
+	        				
+	        				<form action="<%= request.getContextPath() %>/processStep1" method="post" >
 	        				<div class="shop-grid tab-pane fade show active" id="nav-list" role="tabpanel">
 	        					<div class="list__view__wrapper">
+	        					
 	        						<!-- Start Single Product -->
 	        						<div class="list__view">
 	        							<div class="thumb">
@@ -836,7 +842,7 @@
 	        								</ul>
 	        								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
 	        								<ul class="cart__action d-flex">
-	        									<li class="cart"><a href="#">Add to cart</a></li>
+	        									<li class="cart"><a><input type="checkbox" name="book" value="adipiscing"/>Add to cart</a></li>
 	        									<li class="wishlist"><a href="#"></a></li>
 	        									<li class="compare"><a href="#"></a></li>
 	        								</ul>
@@ -866,8 +872,8 @@
 	        								</ul>
 	        								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
 	        								<ul class="cart__action d-flex">
-	        									<li class="cart"><a href="#">Add to cart</a></li>
-	        									<li class="wishlist"><a href="#"></a></li>
+	        									<li class="cart"><a ><input type="checkbox" name="book" value="Voyage Yoga Bag"/>Add to cart</a></li>
+	        									<li class="wishlist"><a></a></li>
 	        									<li class="compare"><a href="#"></a></li>
 	        								</ul>
 
@@ -896,7 +902,7 @@
 	        								</ul>
 	        								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
 	        								<ul class="cart__action d-flex">
-	        									<li class="cart"><a href="#">Add to cart</a></li>
+	        									<li class="cart"><a><input type="checkbox" name="book" value="Impulse Duffle"/>Add to cart</a></li>
 	        									<li class="wishlist"><a href="#"></a></li>
 	        									<li class="compare"><a href="#"></a></li>
 	        								</ul>
@@ -926,7 +932,7 @@
 	        								</ul>
 	        								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
 	        								<ul class="cart__action d-flex">
-	        									<li class="cart"><a href="#">Add to cart</a></li>
+	        									<li class="cart"><a><input type="checkbox" name="book" value="Strive Shoulder Pack"/>Add to cart</a></li>
 	        									<li class="wishlist"><a href="#"></a></li>
 	        									<li class="compare"><a href="#"></a></li>
 	        								</ul>
@@ -955,7 +961,7 @@
 	        								</ul>
 	        								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
 	        								<ul class="cart__action d-flex">
-	        									<li class="cart"><a href="#">Add to cart</a></li>
+	        									<li class="cart"><a><input type="checkbox" name="book" value="Strive Shoulder Pack"/>Add to cart</a></li>
 	        									<li class="wishlist"><a href="#"></a></li>
 	        									<li class="compare"><a href="#"></a></li>
 	        								</ul>
@@ -965,11 +971,16 @@
 	        						<!-- End Single Product -->
 	        					</div>
 	        				</div>
+	        				 <input align="center" type="submit" value="Submit"/>
+	        				</form>
         				</div>
         			</div>
         		</div>
         	</div>
         </div>
+       
+        
+        <!-- kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk -->
         <!-- End Shop Page -->
 		<!-- Footer Area -->
 		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
@@ -1036,6 +1047,6 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/active.js"></script>
-		
+	
 	</body>
 	</html>
