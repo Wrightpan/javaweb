@@ -3,8 +3,7 @@
 
 ### 基本信息
 * 学号:222016321072005
-* 网址: 1. [javaweb](http://120.79.68.168:8081/cookie/login.jsp)
-        2. [javaweb](http://120.79.68.168:8081/cookie/books.jsp)
+* 网址: [javaweb](http://120.79.68.168:8081/book/index1.html)
         
 
 ### 第一周完成内容
