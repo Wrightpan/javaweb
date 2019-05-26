@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 
-/*
- * @func: 对全站进行统一编码
- */
+
 public class EncodingFilter implements Filter {
 	@Override
 	public void init(FilterConfig config) { }
@@ -25,12 +23,11 @@ public class EncodingFilter implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-		// 处理post数据乱码
+	
 		request.setCharacterEncoding("utf-8");
-		// 处理请求乱码
-		HttpServletRequest myReqest = new MyRequest(request);
 		
-		// 处理响应乱码
+		HttpServletRequest myReqest = new MyRequest(request);
+	
 		response.setContentType("text/html;charset=utf-8");
 		chain.doFilter(myReqest, response);
 	}
@@ -39,9 +36,7 @@ public class EncodingFilter implements Filter {
 	public void destroy() {	}
 }
 
-/*
- * @func: 自定义的request对象
- */
+
 class MyRequest extends HttpServletRequestWrapper {
 	private HttpServletRequest request;
 	private boolean hasEncode;
@@ -51,12 +46,12 @@ class MyRequest extends HttpServletRequestWrapper {
 		this.request = request;
 	}
 	
-	// 对需要增强的方法进行覆盖
+	
 	public Map getParamterMap() {
 		String method = request.getMethod();
 		if (method.equalsIgnoreCase("get")) {
 			Map<String, String[]> paramterMap = request.getParameterMap();
-			if (!hasEncode) { // 确保get编码逻辑只执行一次
+			if (!hasEncode) { 
 				for (String paramterName : paramterMap.keySet()) {
 					String[] values = paramterMap.get(paramterName);
 					if (values != null) {

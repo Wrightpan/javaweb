@@ -4,19 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import util.DataSourceUtils;
 
-/*
- * 璁㈠崟涓潯鐩被鎿嶄綔绫�
- * @author: luoxn28
- * @date: 2016.5.18
- */
 public class OrderItemDao {
-	/*
-	 * 寰�璁㈠崟鏉＄洰orderitem琛ㄤ腑鎻掑叆涓�鏉¤鍗曟潯鐩�
-	 * @param OrderItem
-	 * @return void
-	 */
+	
 	public void addOrderItem(OrderItem orderItem) {
 		try {
 			 Connection connection = null;

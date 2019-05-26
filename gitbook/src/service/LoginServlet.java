@@ -22,7 +22,7 @@ import dao.UserDao;
 public class LoginServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.sendRedirect(request.getContextPath() + "/client/login.jsp");
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -34,36 +34,35 @@ public class LoginServlet extends HttpServlet {
 		
 		User user = userDao.getUser(username);
 		if (user == null) {
-			out.println("抱歉，你当前还未注册，2秒后调到注册页面");
+			
 			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/register.jsp");
 			return;
 		}
 		else if (!user.getPassword().equals(password)) {
-			out.println("抱歉，输入密码错误，2秒后调到登录页面");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/login.jsp");
+			
+			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 		else if (user.getState() == 0) {
-			// 未激活
-			out.println("抱歉，你当前还未激活，请联系管理员，2秒后调到登录页面");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/login.jsp");
+			
+			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 
-		// 登录成功，将用户存储到session
+		
 		request.getSession().setAttribute("user" + user.getId(), user);
-		// 添加cookie，cookie信息为 user:id
+		
 		Cookie cookie = new Cookie("user", String.valueOf(user.getId()));
 		response.addCookie(cookie);
 		
-		// 判断用户是否是管理员
+		
 		String role = user.getRole();
 		if (role.equals("admin")) {
 			response.sendRedirect(request.getContextPath() + "/admin/index.jsp");
 			return;
 		}
 		else {
-			response.sendRedirect(request.getContextPath() + "/client/index.jsp");
+			response.sendRedirect(request.getContextPath() + "/index.html");
 		}
 	}
 }

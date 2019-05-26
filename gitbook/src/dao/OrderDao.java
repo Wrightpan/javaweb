@@ -13,19 +13,8 @@ import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import util.DataSourceUtils;
-
-/*
- * 璁㈠崟鎿嶄綔绫�
- * @author: luoxn28
- * @date: 2016.5.18
- */
 public class OrderDao {
-	/*
-	 * 寰�璁㈠崟orders琛ㄤ腑鎻掑叆涓�鏉¤鍗曡褰�
-	 * @param Order
-	 * @return void
-	 */
+	
 	public void addOrder(Order order) {
 		try {
 			//Connection connection = DataSourceUtils.getConnection();

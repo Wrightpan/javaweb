@@ -10,19 +10,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import util.DataSourceUtils;
 
-/*
- * 鍟嗗搧鎿嶄綔绫�
- * @author luoxn28
- * @date 2016.5.15
- */
+
+
 public class ProductDao {
-	/*
-	 * 寰�鍟嗗搧products琛ㄤ腑鎻掑叆涓�鏉″晢鍝佽褰�
-	 * @param Product
-	 * @return void
-	 */
+	
 	public void addProduct(Product product) {
 		 Connection connection = null;
          PreparedStatement preparedStatement = null;
@@ -51,11 +43,7 @@ public class ProductDao {
 		}
 	}
 	
-	/*
-	 * 鏍规嵁鍟嗗搧id鏌ユ壘璇ュ晢鍝佷俊鎭�
-	 * @param id: 鍟嗗搧id
-	 * @return Product锛屾湭鎵惧埌鏃惰繑鍥瀗ull
-	 */
+
 	public Product getProduct(int id) {
 		Product product = null;
 		 //Connection connection = null;
@@ -93,11 +81,7 @@ public class ProductDao {
 		return product;
 	}
 	
-	/*
-	 * 鏇存柊鏁版嵁琛ㄤ腑producct浣欓噺
-	 * @param id: 鍟嗗搧id锛宯um:鍟嗗搧浣欓噺
-	 * @return void
-	 */
+	
 	public void updateProductNum(int id, int num) {
 		try {
 			 Connection connection = null;
@@ -120,11 +104,7 @@ public class ProductDao {
 		}
 	}
 	
-	/*
-	 * 鏍规嵁鍟嗗搧绉嶇被鑾峰彇鍟嗗搧
-	 * @param category 鍟嗗搧绉嶇被
-	 * @return Set 璇ョ绫诲晢鍝侀泦鍚�
-	 */
+	
 	public Set<Product> getProductByCategory(String category) {
 		Set<Product> set = null;
 		
@@ -143,7 +123,7 @@ public class ProductDao {
 			//Connection connection = DataSourceUtils.getConnection();
 			Statement statement = connection.createStatement();
 
-			if (!category.equals("鍏ㄩ儴鍟嗗搧")) {
+			if (!category.equals("閸忋劑鍎撮崯鍡楁惂")) {
 				sql += " where category='" + category + "'";
 			}
 			set = new LinkedHashSet<Product>();
@@ -166,16 +146,12 @@ public class ProductDao {
 		return set;
 	}
 	
-	/*
-	 * 鏍规嵁鍚嶇О鏌ユ壘鍟嗗搧锛屾湭鎵惧埌杩斿洖null
-	 * @param bookName 鍟嗗搧鍚�
-	 * @return 鍖呭惈璇ュ晢鍝佸悕鐨勫晢鍝侀泦鍚�
-	 */
+	
 	public Set<Product> getProductBySearchName(String bookName) {
 		Set<Product> set = null;
 		
 		try {
-			// 浣跨敤閫氶厤绗︼紝鏁堢巼杈冧綆
+			
 			 Connection connection = null;
 	         PreparedStatement preparedStatement = null;
 			//String sql = "SELECT * from products where id=" + id;
@@ -209,12 +185,7 @@ public class ProductDao {
 		
 		return set;
 	}
-	
-	/*
-	 * 鑾峰彇鎵�鏈夊晢鍝�
-	 * @param void
-	 * @return 鎵�鏈夊晢鍝丩ist
-	 */
+
 	public List<Product> getAllProdut() {
 		List<Product> lists = null;
 		
