@@ -13,11 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.User;
 import dao.UserDao;
 
-/*
- * 用户登录Servlet
- * @author: luoxn28
- * @date: 2016.5.14
- */
+
 @WebServlet(name="LoginServlet", urlPatterns={"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 	@Override
@@ -62,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 		else {
-			response.sendRedirect(request.getContextPath() + "/index.html");
+			response.sendRedirect(request.getContextPath() + "/index1.jsp");
 		}
 	}
 }

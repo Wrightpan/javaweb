@@ -14,11 +14,7 @@ import dao.Product;
 import dao.ProductDao;
 import util.ServletUtils;
 
-/*
- * 删除购物车商品类ChangeCartServlet
- * @author: luoxn28
- * @date: 2016.5.17
- */
+
 @WebServlet(name="ChangeCartServlet", urlPatterns={"/ChangeCartServlet"})
 public class ChangeCartServlet extends HttpServlet {
 	@Override
@@ -28,7 +24,7 @@ public class ChangeCartServlet extends HttpServlet {
 	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// 获取对应的商品id
+		
 		String id = request.getParameter("id");
 		Cookie cookie = ServletUtils.getCookie(request, "user");
 		if (cookie != null && id != null && id.length() > 0) {
@@ -40,6 +36,6 @@ public class ChangeCartServlet extends HttpServlet {
 				cart.remove(product);
 			}
 		}
-		response.sendRedirect(request.getContextPath() + "/client/cart.jsp");
+		response.sendRedirect(request.getContextPath() + "/cart.jsp");
 	}
 }

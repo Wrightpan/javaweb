@@ -22,11 +22,7 @@ import dao.Product;
 import dao.ProductDao;
 import util.ServletUtils;
 
-/*
- * 订单结算类
- * @author: luoxn28
- * @date: 2016.5.17
- */
+
 @WebServlet(name="CreateOrderServlet", urlPatterns={"/CreateOrderServlet"})
 public class CreateOrderServlet extends HttpServlet {
 	@Override
@@ -35,19 +31,19 @@ public class CreateOrderServlet extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		// 先判断用户是否登录
+	
 		Cookie cookie = ServletUtils.getCookie(request, "user");
 		if (cookie == null) {
-			response.getWriter().println("抱歉，你当前还未登录，2秒后调到登录页面");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/login.jsp");
+			response.getWriter().println("wrong");
+			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
-		// 获取购物车对象
+		
 		HttpSession session = request.getSession();
 		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart" + cookie.getValue());
 		if (cart == null) {
-			response.getWriter().println("抱歉，你当前购物车为空，2秒后调到主页");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/index.jsp");
+			response.getWriter().println("wrong");
+			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/index.jsp");
 			return;
 		}
 		
@@ -71,7 +67,7 @@ public class CreateOrderServlet extends HttpServlet {
 		String orderTime = dateFormat.format(new Date());
 		order.setOrderTime(orderTime);
 		order.setUserId(Integer.valueOf(cookie.getValue()));
-		// 订单入库
+	
 		orderDao.addOrder(order);
 		
 		ProductDao productDao = new ProductDao();
@@ -82,7 +78,7 @@ public class CreateOrderServlet extends HttpServlet {
 			orderItem.setProductId(product.getId());
 			orderItem.setBuyNum(cart.get(product));
 			orderItemDao.addOrderItem(orderItem);
-			// 更新products表中商品余量
+		
 			productDao.updateProductNum(product.getId(), product.getNum() - cart.get(product));
 		}
 		cart.clear();
