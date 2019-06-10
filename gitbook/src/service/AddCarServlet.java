@@ -30,8 +30,8 @@ public class AddCarServlet  extends HttpServlet {
 		
 		Cookie cookie = ServletUtils.getCookie(request, "user");
 		if (cookie == null) {
-			response.getWriter().println("wrong");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
+			response.getWriter().println("Sorry, you are not logged in yet, and you will be logged in to the login page after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 		

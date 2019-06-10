@@ -18,8 +18,7 @@
 </head>
 
 <body>
-	<%@ include file="../util/head.jsp" %>
-	<%@ include file="../util/menu_search.jsp" %>
+	
 	
 	<div id="register_div">
 		<div><h4>新会员注册</h4></div>

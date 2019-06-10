@@ -1,10 +1,5 @@
 package dao;
 
-/*
- * 订单中条目类 对应表orderitem，具体查看db.sql文件
- * @author: luoxn28
- * @date: 2016.5.18
- */
 public class OrderItem {
 	private String orderId;
 	private int productId;

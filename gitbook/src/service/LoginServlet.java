@@ -30,18 +30,18 @@ public class LoginServlet extends HttpServlet {
 		
 		User user = userDao.getUser(username);
 		if (user == null) {
-			
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/register.jsp");
+			response.getWriter().println("Sorry, you are not registered yet, and you will be transferred to the registration page after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/register.jsp");
 			return;
 		}
 		else if (!user.getPassword().equals(password)) {
-			
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
+			response.getWriter().println("Sorry, the password is incorrect. After 5 seconds, transfer to the login page.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 		else if (user.getState() == 0) {
-			
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
+			response.getWriter().println("Sorry, you have not activated yet, please contact the administrator and transfer to the login page after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 
@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 		else {
-			response.sendRedirect(request.getContextPath() + "/index1.jsp");
+			response.sendRedirect(request.getContextPath() + "/index.jsp");
 		}
 	}
 }

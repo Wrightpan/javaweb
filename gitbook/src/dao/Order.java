@@ -1,19 +1,15 @@
 package dao;
 
-/*
- * 订单类 对应数据表orders，表结构可查看db.sql文件
- * @author: luoxn28
- * @date: 2016.5.18
- */
+
 public class Order {
-	private String id; 				// 订单id
-	private double money; 			// 订单价格
-	private String receiceAddress;	// 收货地址
-	private String recviceName;		// 收货人
-	private String recvicePhone;	// 收货人电话
-	private int paystate;			// 订单支付状态
-	private String orderTime;		// 订单提交时间
-	private int userId;				// 用户id
+	private String id; 				
+	private double money; 			
+	private String receiceAddress;	
+	private String recviceName;		
+	private String recvicePhone;	
+	private int paystate;			
+	private String orderTime;		
+	private int userId;				
 	
 	public Order() {
 		this.id = "";

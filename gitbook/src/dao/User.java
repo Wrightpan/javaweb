@@ -1,33 +1,29 @@
 package dao;
 
-/*
- * é¢ã„¦åŸ›ç»«ï¿½ ç€µç‘°ç°²éç‰ˆåµç›â•±seré”›å²ƒã€ƒç¼æ’´ç€¯é™îˆ›ç…¡éªåªb.sqlé‚å›¦æ¬¢
- * @author: luoxn28
- * @date: 2016.5.13
- */
+
 public class User {
-	private int id;				// é‘·î„î–ƒidé”›å±¼å¯Œé–¿ï¿½
-	private String username;	// é¢ã„¦åŸ›éšï¿½
-	private String password;	// ç€µå—™çˆœ
-	private String gender;		// é¬ÑƒåŸ† "é¢ï¿½"é´æ ¬ï¿½ï¿½"æ¿‚ï¿½"
-	private String email;		// é–­î†¾î†ˆ
-	private String phone;		// éµå¬«æº€
-	private String introduce;	// æ¶“îƒæ±‰ç’‡å­˜æ§‘
-	private String activeCode;	// å©µï¿½å¨²è¤çˆœ
-	private int state;			// é¢ã„¦åŸ›å©µï¿½å¨²è¤å§¸é¬ï¿½ 0:éˆî…ç¸ºå¨²ï¿½ 1:å®¸å‰ç¸ºå¨²ï¿½
-	private String role;		// é¢ã„¦åŸ›ç‘™æ•å£Šé”›å±¾æ§¸éšï¸¿è´Ÿç» ï¼„æ‚Šé›ï¿½ ç» ï¼„æ‚Šé›ï¿½:"admin" æµ¼æ°¬æ†³:""
-	private String registTime;	// é¢ã„¦åŸ›å¨‰ã„¥å”½éƒå •æ£¿ 2016-01-01 00:00:00""
+	private int id;				// ×ÔÔöid£¬Ö÷¼ü
+	private String username;	// ÓÃ»§Ãû
+	private String password;	// ÃÜÂë
+	private String gender;		// ĞÔ±ğ "ÄĞ"»òÕß"Å®"
+	private String email;		// ÓÊÏä
+	private String phone;		// ÊÖ»ú
+	private String introduce;	// ¸öÈËËµÃ÷
+	private String activeCode;	// ¼¤»îÂë
+	private int state;			// ÓÃ»§¼¤»î×´Ì¬ 0:Î´¼¤»î 1:ÒÑ¼¤»î
+	private String role;		// ÓÃ»§½ÇÉ«£¬ÊÇ·ñÎª¹ÜÀíÔ± ¹ÜÀíÔ±:"admin" »áÔ±:""
+	private String registTime;	// ÓÃ»§×¢²áÊ±¼ä 2016-01-01 00:00:00""
 
 	public User() {
 		this.id = 0;
 		this.username = "";
 		this.password = "";
-		this.gender = " ";
+		this.gender = "ÄĞ";
 		this.email = "";
 		this.phone = "";
 		this.introduce = "";
 		this.activeCode = "";
-		this.state = 1;
+		this.state = 0;
 		this.role = "";
 		this.registTime = "2016-01-01 00:00:00";
 	}

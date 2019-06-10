@@ -1,8 +1,4 @@
-<%-- 
-	购物车页面
-	@author: luoxn28
-	@date: 2016.5.15
---%>
+
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8" %>
@@ -21,8 +17,7 @@
 	<title>购物车页面 - bookstore</title>
 </head>
 <body>
-	<%@ include file="../util/head.jsp" %>
-	<%@ include file="../util/menu_search.jsp" %>
+	
 
 	<%
 		Cookie cookie = ServletUtils.getCookie(request, "user");

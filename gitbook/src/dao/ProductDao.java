@@ -123,7 +123,7 @@ public class ProductDao {
 			//Connection connection = DataSourceUtils.getConnection();
 			Statement statement = connection.createStatement();
 
-			if (!category.equals("閸忋劑鍎撮崯鍡楁惂")) {
+			if (!category.equals("全部商品")) {
 				sql += " where category='" + category + "'";
 			}
 			set = new LinkedHashSet<Product>();

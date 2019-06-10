@@ -17,9 +17,7 @@
 	<title>商品页面 - bookstore</title>
 </head>
 <body>
-	<%@ include file="../util/head.jsp" %>
-	<%@ include file="../util/menu_search.jsp" %>
-
+	
 	<c:forEach var="product" items="${productSet}">
 		商品名:${product.name} <br/>
 		价&nbsp;格:${product.price} <br/>

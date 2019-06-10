@@ -34,16 +34,16 @@ public class CreateOrderServlet extends HttpServlet {
 	
 		Cookie cookie = ServletUtils.getCookie(request, "user");
 		if (cookie == null) {
-			response.getWriter().println("wrong");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/login.jsp");
+			response.getWriter().println("Sorry, you are not logged in yet, and you will be logged in to the login page after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 		
 		HttpSession session = request.getSession();
 		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart" + cookie.getValue());
 		if (cart == null) {
-			response.getWriter().println("wrong");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/index.jsp");
+			response.getWriter().println("Sorry, your current shopping cart is empty and transferred to the homepage after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/index.jsp");
 			return;
 		}
 		

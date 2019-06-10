@@ -15,8 +15,7 @@
 	<title>用户主页 - bookstore</title>
 </head>
 <body>
-	<%@ include file="../util/head.jsp" %>
-	<%@ include file="../util/menu_search.jsp" %>
+	
 	
 	<%
 		ProductDao productDao = new ProductDao();

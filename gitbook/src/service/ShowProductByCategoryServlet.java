@@ -12,11 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Product;
 import dao.ProductDao;
 
-/*
- * 根据种类显示商品类
- * @author: luoxn28
- * @date: 2016.5.19
- */
+
 @WebServlet(name="ShowProductByCategoryServlet", urlPatterns={"/ShowProductByCategoryServlet"})
 public class ShowProductByCategoryServlet extends HttpServlet {
 	@Override

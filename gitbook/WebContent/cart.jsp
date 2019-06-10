@@ -37,7 +37,30 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/active.js"></script>
-</head>
+    
+    <script>
+  
+ 
+  
+
+    
+    $(".increment").click(function(){//＋  
+        var _thisInput = $(this).siblings("input");  
+        _thisInput.val(eval(_thisInput.val()) + 1);  
+        $.post("/cart.jsp");  
+     )};   
+    $(".decrement").click(function(){//-  
+        var _thisInput = $(this).siblings("input");  
+        if(eval(_thisInput.val()) == 1){  
+            return ;  
+        }  
+        _thisInput.val(eval(_thisInput.val()) - 1);  
+        $.post("/cart.jsp");    )};
+    
+    
+    </script>
+    
+    
 </head>
 <body> <!-- Start Shopping Cart -->
 
@@ -45,15 +68,15 @@
 	<%
 		Cookie cookie = ServletUtils.getCookie(request, "user");
 		if (cookie == null) {
-			response.getWriter().println("抱歉，你当前还未登录，2秒后调到登录页面");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/login.jsp");
+			response.getWriter().println("Sorry, you are not logged in yet, and you will be logged in to the login page after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/login.jsp");
 			return;
 		}
 		String userId = "cart" + cookie.getValue();
 		Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute(userId);
 		if (cart == null) {
-			response.getWriter().println("抱歉，你当前还未购买任何商品，2秒后调到主页");
-			response.addHeader("refresh", "2;url=" + request.getContextPath() + "/client/index.jsp");
+			response.getWriter().println("Sorry, you haven't purchased any items yet, transfer to the homepage after 5 seconds.");
+			response.addHeader("refresh", "5;url=" + request.getContextPath() + "/index.jsp");
 			return;
 		}
 	%>
@@ -78,13 +101,17 @@
                 
                 <div class="item01 d-flex mt--20">
                     <div class="thumb">
-                        <a href="single-product.html"><img src="${entry.key.imgurl}" alt="product images"></a>
+                        <a href="${entry.key.description}"><img src="${entry.key.imgurl}" alt="product images"></a>
                     </div>
                     <div class="content">
-                        <h6><a href="single-product.html">${entry.key.name}</a></h6>
+                        <h6><a href="${entry.key.description}">${entry.key.name}</a></h6>
                         <span class="prize">${entry.key.price}</span>
                         <div class="product_prize d-flex justify-content-between">
-                            <span class="qun">${entry.value}</span>
+                          <a href="javascript:void(0)"  class="decrement" id="decrement">-</a>
+                          <input type="text" itemId="${entry.key.id}" value="${entry.value}">
+                          
+                          <a href="javascript:void(0)" class="increment" id="increment">+</a>
+                          
                             <ul class="d-flex justify-content-end">
                                 
                                 <li><a href="${pageContext.request.contextPath}/ChangeCartServlet?id=${entry.key.id}"><i class="zmdi zmdi-delete"></i></a></li>
@@ -101,10 +128,10 @@
             <span>${total}</span>
         </div>
         <div class="mini_action cart">
-            <a class="cart__btn" href="${pageContext.request.contextPath}/index1.jsp">continue shopping</a>
+            <a class="cart__btn" href="${pageContext.request.contextPath}/index.jsp">continue shopping</a>
         </div>
          <div class="mini_action checkout">
-            <a class="checkout__btn" href="${pageContext.request.contextPath}/client/order.jsp">Go to Checkout</a>
+            <a class="checkout__btn" href="${pageContext.request.contextPath}/order.jsp">Go to Checkout</a>
         </div>
     </div>
   

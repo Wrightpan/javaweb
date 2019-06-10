@@ -12,11 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import dao.User;
 import dao.UserDao;
 
-/*
- * 后台显示所有用户Servlet
- * @author: luoxn28
- * @date: 2016.5.22
- */
 @WebServlet(name="ShowUserServlet", urlPatterns={"/ShowUserServlet"})
 public class ShowUserServlet extends HttpServlet {
 	@Override
