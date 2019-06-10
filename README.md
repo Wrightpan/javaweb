@@ -3,7 +3,7 @@
 
 ### 基本信息
 * 学号:222016321072005
-* 网址: [bookstore](http://120.79.68.168:8081/gitbook/login.jsp)
+* 网址: [bookstore](http://120.79.68.168:8081/secondbook/login.jsp)
         
 
 ### 第一周完成内容
