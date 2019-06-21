@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>book</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>user</param-name>
+    <param-value>005</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>123456</param-value>
+  </context-param>
+  <context-param>
+    <param-name>userSessionKey</param-name>
+    <param-value>USERSESSIONKEY</param-value>
+  </context-param>
+  <context-param>
+    <param-name>rediretPage</param-name>
+    <param-value>/login.jsp</param-value>
+  </context-param>
+  <context-param>
+    <param-name>uncheckedUrls</param-name>
+    <param-value>/admin/index.jsp,/admin/add_production.jsp,/admin/add_user.jsp,/login.jsp,/register.jsp,/index.jsp,/1.jsp,/2.jsp,/3.jsp,/4.jsp,/shop_list.jsp,/single-product.jsp</param-value>
+  </context-param>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>web.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>listener.CountNumListener</listener-class>
+  </listener>
+</web-app>

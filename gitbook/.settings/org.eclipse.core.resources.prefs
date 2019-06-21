@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//WebContent/1.jsp=UTF-8
+encoding//WebContent/2.jsp=UTF-8
+encoding//WebContent/3.jsp=UTF-8
+encoding//WebContent/4.jsp=UTF-8
+encoding//WebContent/admin/index.jsp=UTF-8
+encoding//WebContent/admin/show_production.jsp=UTF-8
+encoding//WebContent/register.jsp=UTF-8
+encoding//WebContent/single-product.jsp=UTF-8
+encoding//src/admin/AddProductionServlet.java=UTF-8
+encoding//src/dao/ProductDao.java=UTF-8
+encoding//src/db/DataSourceUtils.java=UTF-8
+encoding//src/service/AddCarServlet.java=UTF-8
+encoding//src/service/CreateOrderServlet.java=UTF-8
+encoding//src/service/MenuSearchServlet.java=UTF-8
+encoding//src/util/ServletUtils.java=UTF-8
+encoding//src/web/filter/EncodingFilter.java=UTF-8
