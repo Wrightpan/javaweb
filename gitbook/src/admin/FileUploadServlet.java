@@ -72,8 +72,7 @@ public class FileUploadServlet extends HttpServlet {
 					
 					String ext = filename.substring(filename.lastIndexOf(".") + 1);
 					if (!types.contains(ext)) {
-						request.setAttribute("message", "本系统不支持" + ext + "这种类型文件的上传");
-						request.getRequestDispatcher("/message.jsp").forward(request, response);
+						
 						return;
 					}
 					
@@ -98,8 +97,7 @@ public class FileUploadServlet extends HttpServlet {
 				}
 			}
 		} catch (FileUploadBase.FileSizeLimitExceededException e) {
-			request.setAttribute("meassage", "文件大小不能超过5M");
-			request.getRequestDispatcher("/message.jsp").forward(request, response);
+			
 			return;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
