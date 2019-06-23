@@ -19,7 +19,7 @@ import org.apache.commons.dbcp2.BasicDataSourceFactory;
 public class DataSourceUtils {
 	private static Properties MyDB = new Properties();
 	     private static DataSource dataSource;
-	     //加载DBCP配置文件
+	     
 	     static{
 	         try{
 	            FileInputStream is = null;  
@@ -40,7 +40,7 @@ public class DataSourceUtils {
 	 	public static DataSource getDataSource() {
 			return dataSource;
 		}
-	     //从连接池中获取一个连接
+	     
 	     public static Connection getConnection(){
 	         Connection connection = null;
 	         try{

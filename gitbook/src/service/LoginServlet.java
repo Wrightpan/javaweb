@@ -27,9 +27,9 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		String userName=request.getParameter("username");//获取前台传来的userName属性
+		String userName=request.getParameter("username");
 		HttpSession session1 = request.getSession();
-		session1.setAttribute("username", userName);//将属性保存到session会话中
+		session1.setAttribute("username", userName);
 		
 		
 		PrintWriter out = response.getWriter();

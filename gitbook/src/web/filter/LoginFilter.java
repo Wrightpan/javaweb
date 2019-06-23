@@ -14,7 +14,7 @@ import web.filter.*;
 
 public class LoginFilter extends HttpFilter{
 
-	//1. 从 web.xml 文件中获取 sessionKey, redirectUrl, uncheckedUrls
+
 	private String sessionKey;
 	private String redirectUrl;
 	private String unchekcedUrls;
@@ -34,25 +34,24 @@ public class LoginFilter extends HttpFilter{
 			HttpServletResponse response, FilterChain filterChain)
 			throws IOException, ServletException {
 		
-		//1. 获取请求的 servletPath
-		
+	
 		String servletPath = request.getServletPath();
 		
-		//2. 检查 1 获取的 servletPath 是否为不需要检查的 URL 中的一个, 若是, 则直接放行. 方法结束
+	
 		List<String> urls = Arrays.asList(unchekcedUrls.split(","));
 		if(urls.contains(servletPath)){
 			filterChain.doFilter(request, response);
 			return;
 		}
 		
-		//3. 从 session 中获取 sessionKey 对应的值, 若值不存在, 则重定向到 redirectUrl
+		
 		Object user = request.getSession().getAttribute(sessionKey);
 		if(user == null){
 			response.sendRedirect(request.getContextPath() + redirectUrl);
 			return;
 		}
 		
-		//4. 若存在, 则放行, 允许访问. 
+
 		filterChain.doFilter(request, response);
 	}
 

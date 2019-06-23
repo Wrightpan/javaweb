@@ -2,17 +2,17 @@ package domain;
 
 
 public class User {
-	private int id;				// 自增id，主键
-	private String username;	// 用户名
-	private String password;	// 密码
-	private String gender;		// 性别 "男"或者"女"
-	private String email;		// 邮箱
-	private String phone;		// 手机
-	private String introduce;	// 个人说明
-	private String activeCode;	// 激活码
-	private int state;			// 用户激活状态 0:未激活 1:已激活
-	private String role;		// 用户角色，是否为管理员 管理员:"admin" 会员:""
-	private String registTime;	// 用户注册时间 2016-01-01 00:00:00""
+	private int id;				
+	private String username;	
+	private String password;	
+	private String gender;		
+	private String email;		
+	private String phone;		
+	private String introduce;	
+	private String activeCode;	
+	private int state;			
+	private String role;		
+	private String registTime;	
 
 	public User() {
 		this.id = 0;

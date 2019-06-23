@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<project default="localDeployWar" basedir=".">
+
+        <echo message="pulling in property files" />
+        <property file="build.properties" />
+
+        <!--  定义项目名称  -->
+        <property name="project.name" value="bookstore" />
+        <!--  定义jar包名称  -->
+        <property name="jar.name" value="bookstore" />
+        <!--  定义war名称  -->
+        <property name="war.name" value="${project.name}" />
+        <!--  定义local web 容器的部署路径  -->
+        <property name="localWebServer.home" value="/opt/apach-tomcat-9.0.16/" />
+
+        <!--  定义remote web 容器
+        <property name="url" value="http://192.168.0.56:7080/manager" />
+        <property name="username" value="coobase" />
+        <property name="password" value="fulong" />
+        <property name="remoteWebappPath" value="/EasyPiping" /> -->
+        <!--  源代码路径  -->
+        <property name="src.dir" value="./src" />
+        <!--  编译的目标路径  -->
+        <property name="dist.dir" value="./dist" />
+        <property name="dist.classes.dir" value="${dist.dir}/classes" />
+        <property name="dist.jar.dir" value="${dist.dir}/jar" />
+        <property name="dist.war.dir" value="${dist.dir}/war" />
+        <!-- WebContent 结构下的几个路径  -->
+        <property name="build.dir" value="./build" />
+        <property name="webcontent.dir" value="./WebContent" />
+        <property name="webcontent.webinf.dir" value="${webcontent.dir}/WEB-INF" />
+
+        <!--  定义 classpath 路径，抽象定义，可以多处引用  -->
+        <path id="classpath">
+                <!-- 项目的jar包-->
+                <fileset dir="${webcontent.webinf.dir}/lib">
+                        <include name="**/*.jar" /> 
+                </fileset>
+        </path>
+        <!--  初始化删除、创建 classes 路径  -->
+        <target name="init">
+                <echo message=" ======  初始化创建build.dir编译目录  ======" />
+                <delete dir="${dist.dir}" />
+                <mkdir dir="${dist.dir}" />
+                 <mkdir dir="${dist.jar.dir}" />
+                <mkdir dir="${dist.war.dir}" />
+                <echo message=" ======  初始化WebContent.classes创建编译目录  ======" />
+                <!-- WebContent 下的 classes -->
+                <mkdir dir="${dist.classes.dir}" />
+        </target>
+        <!--  编译 java 文件，编译到 dist.classes 下-->
+        <target name="compile" depends="init">
+                <echo message=" ======  编译源代码 复制到 dist.classes 目录 ======" />
+                 <javac encoding="utf-8" srcdir="${src.dir}" destdir="${dist.classes.dir}" debug="on" deprecation="false" optimize="true" failonerror="true" source="1.6" target="1.6">
+                        <classpath refid="classpath" />
+                </javac>
+ <!-- 格式 二  <javac  srcdir="${src.dir} "  destdir="${build.classes.dir}" classpathref="classpath" />  -->
+
+                <echo message=" ======  将重新编译的classes文件复制到classes目录下 ======" />
+                <copy todir="${build.dir}/classes">
+                        <fileset dir="${dist.classes.dir}">
+                                <exclude name="**/*Test*.*" />
+                        </fileset>
+                </copy>
+
+        </target>
+        <target name="test" depends="compile" description="Junit 测试，暂无">
+                <echo message=" ====== Junit 测试，暂无 ======" />
+                <!--
+                <delete dir="${build.report.dir}" />
+                <mkdir dir="${build.report.dir}" />
+                <fail if="tests.failed" /> -->
+        </target>
+        <target name="jar" depends="test" description=" 将dist.classes打 jar包">
+                <echo message=" ====== 将src打 jar包 ======" />
+                        <jar destfile="${dist.jar.dir}/${jar.name}.jar" basedir="${dist.classes.dir}">
+                                <!--
+                                <manifest>
+                                        <attribute name="Build-By" value="${user.name}"/>
+                                        <attribute name="Main-Class" value="com.anllin.ant.test.Window"/>
+                                </manifest>
+                                -->
+                        </jar>
+                          </target>
+        <target name="war" depends="test" description="将工程打成 war 包">
+                <echo message=" ======  打 war 包  ======" />
+                <delete file="${dist.war.dir}/${war.name}.war" />
+                <war warfile="${dist.war.dir}/${war.name}.war" webxml="${webcontent.webinf.dir}/web.xml">
+                        <fileset dir="${webcontent.dir}" >
+                        </fileset>
+                </war>
+        </target>
+
+
+
+        <target name="localDeployWar" depends="war" description="将war包部署server中">
+                <echo message="将war包部署local server中" />
+                <delete file="${localWebServer.home}/webapps/${war.name}.war" />
+                <delete dir="${localWebServer.home}/webapps/${project.name}" />
+
+                <copy todir="${localWebServer.home}/webapps" overwrite="true">
+                        <fileset file="${dist.war.dir}/${war.name}.war" />
+                </copy>
+
+</target>
+</project>

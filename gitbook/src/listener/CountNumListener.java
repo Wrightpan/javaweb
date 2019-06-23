@@ -10,7 +10,7 @@ public class CountNumListener implements HttpSessionListener {
 	
 	@Override
 	public void sessionCreated(HttpSessionEvent se) {
-		//得到ServletContext
+		
 		ServletContext context = se.getSession().getServletContext();
 		Integer count = (Integer) context.getAttribute("count");
 		if (count == null) {
@@ -24,7 +24,7 @@ public class CountNumListener implements HttpSessionListener {
 
 	@Override
 	public void sessionDestroyed(HttpSessionEvent se) {
-		//得到ServletContext
+		
 		ServletContext context = se.getSession().getServletContext();
 		Integer count = (Integer) context.getAttribute("count");
 		count--;

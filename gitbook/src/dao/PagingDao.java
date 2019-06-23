@@ -15,11 +15,11 @@ import domain.Paging;
 @WebServlet("/PagingDao")
 public interface PagingDao  {
 	
-    //显示总的记录条数
+   
     Integer getCountRecord();
-    //根据当前页到结束页的查询
+   
     List<Paging> findIimitPage(Integer newPage);
-    //总的页数
+    
     Integer getCountPage();
 
 }
